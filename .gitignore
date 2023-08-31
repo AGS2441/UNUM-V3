@@ -1,0 +1,24 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/UNUMSelfPwdReset/UNUMSelfPwdReset.csproj
+/.vs/VSWorkspaceState.json
+/.vs/UNUM-V3/v17/workspaceFileList.bin
+/.vs/UNUM/v17/.suo
+/.vs/UNUM/v17/.futdcache.v2
+/.vs/slnx.sqlite
+/.vs/ProjectEvaluation/unum.projects.v5.2
+/.vs/ProjectEvaluation/unum.metadata.v5.2
+/.vs/UNUM-V3/FileContentIndex/df1c64b7-44f9-42d0-926c-b6035114bb03.vsidx
+/.vs/UNUM-V3/FileContentIndex/6395bf5d-4fe7-48f6-8cc3-2cb64c3330cb.vsidx
+/.vs/UNUM-V3/FileContentIndex/cdda880d-5dd3-4831-adc9-ac3b1c00d741.vsidx
+/.vs/UNUM-V3/FileContentIndex/b80ffcdf-daec-463a-83cc-94400d2a9f0c.vsidx
+/.vs/UNUM-V3/FileContentIndex/73acaabe-2d79-403f-b18c-2d35b72dea50.vsidx
+/.vs/UNUM-V3/FileContentIndex/6066c343-1717-419e-9f2f-d25e9718f0b0.vsidx
+/.vs/UNUM-V3/FileContentIndex/97f06f58-8fd3-4a34-bc1c-cb4dd8f47ce9.vsidx
+/.vs/UNUM-V3/v17/.wsuo
+/.vs/UNUM/FileContentIndex/f0fedc4d-ad7a-4816-a1de-7c29f2c931ba.vsidx
+/.vs/UNUM/FileContentIndex/7a1d6bc9-1e4b-4905-8bbd-b2bd8c8f479d.vsidx
+/.vs/UNUM/FileContentIndex/4ada8d60-ac77-47d0-b1c9-096fc73e3d7a.vsidx
+/.vs/UNUM/FileContentIndex/001befef-655e-4340-a7af-f3b7c5868ecb.vsidx
