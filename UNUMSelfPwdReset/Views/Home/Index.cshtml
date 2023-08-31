@@ -4,20 +4,7 @@
 }
 @model UserProfileViewModel
 <style>
-    .lab{
-        width: 100%;
-        font-size: 16px;
-        text-align: center;
-        padding: 10px;
-        font-weight: bold !important;
-    }
-    .ptext{
-        text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 15px;
-    color: #00428c;
-    }
+
 </style>
 <div class="page-header">
     <h1 class="page-title">My Accounts</h1>
@@ -89,12 +76,12 @@
                             <input type="hidden" asp-for="Id" class="userId" />
                             @if (item.HasAccess)
                             {
-                                @* <a class="btn btn-primary" asp-action="ResetPassword">
-                    <i class="fa fa-pencil-square-o f-16" aria-hidden="true"></i>  Reset Password
-                    </a>*@
-                                <button type="button" class="btn btn-green" id="Generate">
+                               @* <button type="button" class="btn btn-green" id="Generate">
                                     <i class="fa fa-key f-16" aria-hidden="true"></i>  Generate Password
-                                </button>
+                                </button>*@
+                                <a class="btn btn-green" asp-action="GeneratePassword" asp-route-Id="@Model.Id">
+                                    <i class="fa fa-key f-16" aria-hidden="true"></i>  Generate Password
+                                </a>
                                 <a class="btn btn-primary" asp-action="ChangePassword">
                                     <i class="fa fa-pencil-square-o f-16" aria-hidden="true"></i>  Change Password
                                 </a>
@@ -136,7 +123,7 @@ else
 
                             </p>
                             <label id="temp" class="lab"></label>
-                            
+
                         </div>
 
                     </div>
@@ -191,10 +178,10 @@ else
             $temp.val($(".copyTemp").val()).select();
             document.execCommand("copy");
             $temp.remove();
-           
+
         });
         $(document).on('click', '.dismissmodal', function () {
             $('#GenerateModel').modal('hide');
-             });
+        });
     </script>
 }

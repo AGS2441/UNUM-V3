@@ -242,24 +242,33 @@ namespace UNUMSelfPwdReset.Controllers
         [HttpGet]
         public async Task<IActionResult> GeneratePassword(string Id)
         {
-            string token = await _azureAdminActionManager.GetAdminTokenForGraph();
-            string tempPassword = GenerateRandomStrongPassword(8);
-            //string tempPassword = "Ags@2023";
-            ResetPasswordRequest temp = new ResetPasswordRequest();
-            temp.Id = Id; temp.NewPassword = tempPassword;
-            var response = await _passwordResetService.ResetUserPasswordAsync(token, temp);
-            if (response == "true")
+            GenerateResponce model = new GenerateResponce();
+            try
             {
-                
-               // TempData.SetObjectAsJson("PopupViewModel", StaticMethods.CreatePopupModel("Home", "Password Changed Successfully !"));
-                return Json(tempPassword);
-            }
-            else
-            {
-                TempData.SetObjectAsJson("PopupViewModel", StaticMethods.CreatePopupModel("Home", response));
-            }
+                string token = await _azureAdminActionManager.GetAdminTokenForGraph();
+                string tempPassword = GenerateRandomStrongPassword(12);
+                //string tempPassword = "Ags@2023";
+                ResetPasswordRequest temp = new ResetPasswordRequest();
+                temp.Id = Id; temp.NewPassword = tempPassword;
+                model.TempPassword = tempPassword;
+                var response = await _passwordResetService.ResetUserPasswordAsync(token, temp);
+                if (response == "true")
+                {
 
-            return Json(tempPassword);
+                    // TempData.SetObjectAsJson("PopupViewModel", StaticMethods.CreatePopupModel("Home", "Password Changed Successfully !"));
+                    return View (model);
+                }
+                else
+                {
+                    TempData.SetObjectAsJson("PopupViewModel", StaticMethods.CreatePopupModel("Home", response));
+                    return RedirectToAction("Index");
+                }
+
+                
+            }catch(Exception ex) {
+                TempData.SetObjectAsJson("PopupViewModel", StaticMethods.CreatePopupModel("Home", ex.Message));
+                return RedirectToAction("Index");
+            }
         }
 
         #endregion
@@ -281,7 +290,7 @@ namespace UNUMSelfPwdReset.Controllers
         string allChars = alphaCaps + alphaLow + numerics + special;
         Random r = new Random();
 
-        public string GenerateRandomStrongPassword(int length = 8)
+        public string GenerateRandomStrongPassword(int length = 12)
         {
             String generatedPassword = "";
             if (length < 4)

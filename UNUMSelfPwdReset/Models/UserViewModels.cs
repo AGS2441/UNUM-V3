@@ -43,6 +43,12 @@ namespace UNUMSelfPwdReset.Models
         RACF
 
     }
+    public class GenerateResponce
+    {
+        public string Message { get; set; }
+        public string TempPassword { get; set; }
+
+    }
 
     public class ResetPasswordRequest
     {
@@ -85,7 +91,7 @@ namespace UNUMSelfPwdReset.Models
         //[StringLength(255, ErrorMessage = "Must be between 5 and 255 characters", MinimumLength  = 5)]
         public string NewPassword { get; set; }
 
-        [Required(ErrorMessage = "Confirm Password is required")]        
+        [Required(ErrorMessage = "Confirm Password is required")]
         [Compare("NewPassword", ErrorMessage = "The password and confirmation password do not match.")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }

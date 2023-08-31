@@ -190,3 +190,30 @@ section.dashboard-buttons {
     font-size: 16px;
     width: 40px;
 }
+.lab {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold !important;
+}
+
+.ptext {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    color: #00428c;
+}
+.bg-r {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+}
+.copyTemp {
+    align-items: center;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
